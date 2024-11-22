@@ -5,6 +5,14 @@ document.getElementById("get-btn").addEventListener("click", async () => {
     // The two input fields should be included in the request URL as **query parameters**
 
     // TODO
+    let name = docment.getElementById('name').value;
+    let age = document.getElementById('age');
+    let parameters = new URLSearchParams({name, age});
+    let re = await fetch("https://echo.zuplo.io/api?");
+    console.log(re);
+
+    let response = await re.json();
+    output.textContent = JSON.stringify(response, null, 2);
 });
 
 document.getElementById("post-json-btn").addEventListener("click", async () => {
